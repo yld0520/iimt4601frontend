@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    
+    "name": "Reddit Verifier",
+    "version": "1.0",
+    "description": "reddit verifier",
+    "icons": {
+        "16": "image/chrome.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "image/chrome.png"
+        },
+        "default_title": "Reddit Verifier", 
+        "default_popup": "popup.html" 
+    },
+	"content_scripts": [
+     {
+       "matches": ["<all_urls>"], 
+       "js": ["js/jquery-3.1.1.min.js","js/content.js"]
+     }
+   ],
+    
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    
+    "optional_permissions": [
+        "tabs"
+    ],
+    "permissions": [
+        "contextMenus",
+
+        "notifications",
+       
+        "cookies"        
+    ]
+}
