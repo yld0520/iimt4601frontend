@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    
+    // 显示在 chrome-settings-extensions中的信息
     "name": "Reddit Verifier",
     "version": "1.0",
-    "description": "reddit verifier",
+    "description": "Reddit Verifier",
     "icons": {
         "16": "image/chrome.png"
     },
@@ -11,8 +11,8 @@
         "default_icon": {
             "16": "image/chrome.png"
         },
-        "default_title": "Reddit Verifier", 
-        "default_popup": "popup.html" 
+        "default_title": "Reddit Verifier", //鼠标悬浮时显示的提示名称
+        "default_popup": "popup.html" // 点击图标时弹出的页面
     },
 	"content_scripts": [
      {
@@ -20,19 +20,21 @@
        "js": ["js/jquery-3.1.1.min.js","js/content.js"]
      }
    ],
-    
+   
     "background": {
+      
         "scripts": [
             "js/background.js"
         ]
     },
-    
+    //可选权限,需要在用户事件(比如click)中进行动态申请
     "optional_permissions": [
         "tabs"
     ],
     "permissions": [
+      
         "contextMenus",
-
+        //　添加桌面提醒
         "notifications",
        
         "cookies"        
